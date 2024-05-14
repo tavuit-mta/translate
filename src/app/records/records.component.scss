@@ -1,0 +1,73 @@
+.records--container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+
+  .records--container__button {
+    width: 100px;
+  }
+
+  .records--container__table-container {
+    height: 70vh;
+
+    overflow-y: scroll;
+    ::ng-deep {
+      .mat-column-sourceText {
+        width: 10%;
+        flex: 0 0 25% !important;
+      }
+
+      .mat-column-targetText {
+        width: 15%;
+        flex: 0 0 25% !important;
+      }
+
+      .mat-column-receivedAt {
+        width: 15%;
+        flex: 0 0 25% !important;
+      }
+    }
+  }
+}
+
+.records--container__button {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  akign-items: center;
+
+  gap: 8px;
+
+  .records--container__button--loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #00a89d;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+}
+
+
+::ng-deep .mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #00a89d !important;
+}
+
+::ng-deep .recording:not(:disabled) {
+  background-color: #f5ab6c !important;
+}
